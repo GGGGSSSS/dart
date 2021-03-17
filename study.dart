@@ -1,5 +1,5 @@
 class Person {
-  String name = null;
+  String? name = null;
   void zz() {
     print('44');
   }
@@ -25,6 +25,6 @@ const zrr = {
 };
 
 class Runner implements Person {
-  String name;
-  int zz() {}
+  var name;
+  void zz() {}
 }

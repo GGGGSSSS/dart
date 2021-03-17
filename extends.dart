@@ -1,7 +1,7 @@
 main(List<String> args) {
   // var name = "狗蛋";
   // var age = 11;
-  Animal p = new Person("狗蛋", 11);
+  Animal p = new Person(name: "狗蛋", age: 11);
   // p.age = 18;
   p.run();
   print(p.name);
@@ -12,7 +12,7 @@ main(List<String> args) {
 class Animal {
   int age = 5;
   String name;
-  String uu;
+  late String uu;
   static int i = 5;
 
   Animal(this.name, this.age);
@@ -24,9 +24,9 @@ class Animal {
 
 class Person extends Animal {
   String name;
-  int age;
+  late int age;
 
-  Person(this.name, age) : super(name + "2", age);
+  Person({this.name, age}) : super(name + "2", age);
 
   // @override
   // run() {
@@ -38,4 +38,6 @@ class Person extends Animal {
     return 'name=$name, age=$age';
   }
 }
+
 // 子类会继承父类可见的属性和方法，不会继承构造方法
+var names = <dynamic>{};
